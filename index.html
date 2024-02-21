@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Title -->
+    <title>Pokemon API</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">App Pokemon</h1>
+        <div class="box" style="text-align: center;">
+            <input id="searchbar" class="poke-search" onkeyup="search_pokemon()" type="text"
+            name="search" placeholder="Buscar Pokemon.." style="width: 62%; position: relative; margin-right: 10%;">
+        </div>
+        <ul id="pokedex" class="pokemon-grid"></ul>
+    </div>
+        <script >
+        function search_pokemon() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('card'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+} 
+        </script>
+    </body>
+</html>
